@@ -1,21 +1,19 @@
 package mitchell_erik.graphics;
 
+import static mitchell_erik.calculus.derivativecalc.calculations.Derivative.getDerivative;
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSeparator;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-
-import static mitchell_erik.calculus.derivativecalc.calculations.Derivative.getDerivative;;
+import javax.swing.SwingConstants;;
 
 public class Main
 {
