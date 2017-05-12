@@ -2,4 +2,3 @@ INDEX VERSION 1.129+D:\DerivativeCalc\.metadata\.plugins\org.eclipse.jdt.core
 33812422.index
 3996135809.index
 2103145707.index
-1657330681.index
