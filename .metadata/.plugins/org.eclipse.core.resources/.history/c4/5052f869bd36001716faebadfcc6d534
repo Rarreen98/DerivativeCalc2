@@ -1,0 +1,26 @@
+package com.mitchell.erik.apcalc.derivativecalc;
+
+import java.util.List;
+
+public class FunctionBranch
+{
+	private String numerator;
+	private String denominator;
+	private boolean isRational;
+	private List<String> parts;
+	
+
+	public FunctionBranch(String numerator, String denominator)
+	{
+		this.numerator = numerator;
+		this.denominator = denominator;
+		
+		if(this.denominator.equals("1") || this.denominator == null)
+			isRational = false;
+	}
+	
+	public void splitAddition()
+	{
+		
+	}
+}

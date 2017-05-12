@@ -1,0 +1,20 @@
+package com.mitchell.erik.apcalc.derivativecalc.function;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class FunctionTokens
+{
+	private ArrayList<String> tokens;
+	
+	public FunctionTokens(String numerator, String denominator)
+	{
+		Scanner split = new Scanner(numerator);
+		split.
+	}
+	
+	public FunctionTokens(String numerator)
+	{
+		
+	}
+}
