@@ -1,0 +1,114 @@
+package com.mitchell.erik.apcalc.derivativecalc;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.JTextField;
+import com.jgoodies.forms.layout.FormLayout;
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.layout.RowSpec;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import net.miginfocom.swing.MigLayout;
+import java.awt.Component;
+import javax.swing.Box;
+import java.awt.Dimension;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JSeparator;
+import java.awt.Color;
+import javax.swing.JButton;
+
+public class Main
+{
+
+	private JFrame frame;
+	private JTextField numerator;
+	private JTextField denominator;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args)
+	{
+		EventQueue.invokeLater(new Runnable()
+		{
+			public void run()
+			{
+				try
+				{
+					Main window = new Main();
+					window.frame.setVisible(true);
+				}
+				catch (Exception e)
+				{
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public Main()
+	{
+		initialize();
+	}
+
+	private void initialize()
+	{
+		frame = new JFrame();
+		frame.setResizable(false);
+		frame.setBounds(100, 100, 640, 400);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel screen = new JPanel();
+		screen.setBounds(0, 65, 634, 175);
+		frame.getContentPane().add(screen);
+		screen.setLayout(null);
+		
+		numerator = new JTextField();
+		numerator.setFont(new Font("Tahoma", Font.PLAIN, 36));
+		numerator.setHorizontalAlignment(SwingConstants.CENTER);
+		numerator.setBounds(120, 11, 504, 46);
+		numerator.setColumns(10);
+		screen.add(numerator);
+		
+		denominator = new JTextField();
+		denominator.setFont(new Font("Tahoma", Font.PLAIN, 36));
+		denominator.setHorizontalAlignment(SwingConstants.CENTER);
+		denominator.setText("1");
+		denominator.setBounds(120, 83, 504, 46);
+		screen.add(denominator);
+		denominator.setColumns(10);
+		
+		JLabel lblNumerator = new JLabel("Numerator");
+		lblNumerator.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNumerator.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblNumerator.setBounds(20, 16, 90, 30);
+		screen.add(lblNumerator);
+		
+		JLabel lblDenominator = new JLabel("Denominator");
+		lblDenominator.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblDenominator.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblDenominator.setBounds(9, 88, 101, 30);
+		screen.add(lblDenominator);
+		
+		JSeparator separator = new JSeparator();
+		separator.setForeground(Color.BLACK);
+		separator.setBounds(120, 71, 504, 2);
+		screen.add(separator);
+		
+		JButton btnCalculate = new JButton("Calculate");
+		btnCalculate.setBounds(120, 140, 128, 30);
+		screen.add(btnCalculate);
+		
+		JLabel lblInput = new JLabel("Input");
+		lblInput.setFont(new Font("Tahoma", Font.PLAIN, 42));
+		lblInput.setHorizontalAlignment(SwingConstants.CENTER);
+		lblInput.setBounds(234, 0, 169, 58);
+		frame.getContentPane().add(lblInput);
+	}
+}
