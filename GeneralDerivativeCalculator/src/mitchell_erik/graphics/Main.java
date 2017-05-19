@@ -1,19 +1,21 @@
 package mitchell_erik.graphics;
 
-import static mitchell_erik.calculus.derivativecalc.calculations.Derivative.getDerivative;
+import static mitchell_erik.calculus.derivativecalc.Derivative.parse;
 
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;;
+import javax.swing.SwingConstants;
+import javax.swing.DropMode;;
 
 public class Main
 {
@@ -54,7 +56,7 @@ public class Main
 		frmGeneralFunctionDerivative = new JFrame();
 		frmGeneralFunctionDerivative.setBackground(Color.RED);
 		frmGeneralFunctionDerivative.setResizable(false);
-		frmGeneralFunctionDerivative.setTitle("General Function Derivative Calculator");
+		frmGeneralFunctionDerivative.setTitle("General Function Derivative Calculator (NO RATIONALS)");
 		frmGeneralFunctionDerivative.setBounds(100, 100, 550, 348);
 		frmGeneralFunctionDerivative.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmGeneralFunctionDerivative.getContentPane().setLayout(null);
@@ -76,7 +78,13 @@ public class Main
 		btnCalculate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e)
 			{
-				output.setText(getDerivative(input.getText()));
+				ArrayList<String> result = parse(input.getText());
+				String textOut = "";
+				for(String curr : result)
+				{
+					textOut += curr + " ";
+				}
+				output.setText(textOut);
 			}
 		});
 		
@@ -85,9 +93,10 @@ public class Main
 		screen.add(btnCalculate);
 
 		output = new JTextField();
-		output.setForeground(Color.BLUE);
-		output.setHorizontalAlignment(SwingConstants.CENTER);
 		output.setEditable(false);
+		output.setDropMode(DropMode.ON);
+		output.setForeground(Color.BLACK);
+		output.setHorizontalAlignment(SwingConstants.CENTER);
 		output.setBounds(10, 199, 504, 46);
 		screen.add(output);
 		output.setColumns(10);
