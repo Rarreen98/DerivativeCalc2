@@ -1,6 +1,6 @@
 package mitchell_erik.graphics;
 
-import static mitchell_erik.calculus.derivativecalc.Derivative.parse;
+import static mitchell_erik.calculus.derivativecalc.Derivative.*;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import javax.swing.DropMode;;
+
 
 public class Main
 {
@@ -75,10 +75,12 @@ public class Main
 		screen.add(input);
 
 		JButton btnCalculate = new JButton("Calculate");
+		btnCalculate.setBounds(10, 271, 128, 30);
+		screen.add(btnCalculate);
 		btnCalculate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e)
 			{
-				ArrayList<String> result = parse(input.getText());
+				ArrayList<String> result = getBetweenPara(input.getText());
 				String textOut = "";
 				for(String curr : result)
 				{
@@ -87,14 +89,10 @@ public class Main
 				output.setText(textOut);
 			}
 		});
-		
-		
-		btnCalculate.setBounds(10, 271, 128, 30);
-		screen.add(btnCalculate);
 
 		output = new JTextField();
+		output.setFont(new Font("Tahoma", Font.PLAIN, 36));
 		output.setEditable(false);
-		output.setDropMode(DropMode.ON);
 		output.setForeground(Color.BLACK);
 		output.setHorizontalAlignment(SwingConstants.CENTER);
 		output.setBounds(10, 199, 504, 46);

@@ -1,6 +1,0 @@
-package com.mitchell.erik.apcalc.derivativecalc.calculations;
-
-public class Derivative
-{
-	public Derivative()
-}
