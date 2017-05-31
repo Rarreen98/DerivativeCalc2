@@ -29,7 +29,7 @@ public class Derivative
 				part = input.substring(section1,section2);
 				parts.add(part);
 				parts.add(input.charAt(i) + "");
-				section1=section2+1;
+				section1 = section2 + 1;
 			}
 		}
 		parts.add(input.substring(section1));

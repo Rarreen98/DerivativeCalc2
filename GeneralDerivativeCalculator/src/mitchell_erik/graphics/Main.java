@@ -80,13 +80,13 @@ public class Main
 		btnCalculate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e)
 			{
-				ArrayList<String> result = getBetweenPara(input.getText());
-				String textOut = "";
+				ArrayList<String> result = regexChecker(input.getText(),"(\\\\+|\\-)\\d+\\x\\^");
+				//String textOut = "";
 				for(String curr : result)
 				{
-					textOut += curr + " ";
+					System.out.println(curr);
 				}
-				output.setText(textOut);
+				//output.setText(textOut);
 			}
 		});
 

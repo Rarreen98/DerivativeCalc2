@@ -12,7 +12,7 @@ public class TestDriver
 		Scanner input = new Scanner(System.in);
 		String func = input.nextLine();
 		
-		ArrayList<String> test = getBetweenPara(func);
+		ArrayList<String> test = regexChecker(func,"/(\\d|\\))(\\+|\\-)\\d+\\x\\^(\\d+|[s][i][n][(]|[c][o][s][(]|[t][a][n][(])/g");
 		System.out.println(test);
 		
 		input.close();
